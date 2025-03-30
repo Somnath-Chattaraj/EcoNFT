@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core colors */
+    --background: 210 36% 96%;
+    --foreground: 210 22% 20%;
+
+    /* Surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 210 22% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 22% 20%;
+
+    /* Brand colors */
+    --primary: 204 86% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 171 100% 41%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* UI colors */
+    --muted: 210 16% 82%;
+    --muted-foreground: 210 22% 40%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input colors */
+    --border: 210 16% 82%;
+    --input: 210 16% 82%;
+    --ring: 204 86% 53%;
+
+    /* Chart colors - Using a more harmonious palette */
+    --chart-1: 204 86% 53%;
+    --chart-2: 171 100% 41%;
+    --chart-3: 48 100% 67%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Core colors */
+    --background: 210 22% 20%;
+    --foreground: 210 36% 96%;
+
+    /* Surface colors */
+    --card: 210 22% 20%;
+    --card-foreground: 210 36% 96%;
+    --popover: 210 22% 20%;
+    --popover-foreground: 210 36% 96%;
+
+    /* Brand colors */
+    --primary: 204 86% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 171 100% 41%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* UI colors */
+    --muted: 210 22% 30%;
+    --muted-foreground: 210 36% 70%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input colors */
+    --border: 210 22% 30%;
+    --input: 210 22% 30%;
+    --ring: 204 86% 53%;
+
+    /* Chart colors - Using cooler tones for dark mode */
+    --chart-1: 204 86% 53%;
+    --chart-2: 171 100% 41%;
+    --chart-3: 48 100% 67%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 82% 52%;
+  }
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  /* Custom animation utilities */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+  }
+
+  /* Improved focus styles */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* Improved transition utilities */
+  .transition-smooth {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
